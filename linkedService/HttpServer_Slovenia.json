@@ -1,0 +1,14 @@
+{
+	"name": "HttpServer_Slovenia",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Slovenia 2017",
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "http://eo-learn.sentinel-hub.com.s3.eu-central-1.amazonaws.com",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

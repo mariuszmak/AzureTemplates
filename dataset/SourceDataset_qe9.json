@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_qe9",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpServer_nytaxi",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/resource/2np7-5jsg.json"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

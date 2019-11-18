@@ -1,0 +1,220 @@
+{
+	"name": "CopyPipeline_nyg2014",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_qe9",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "/resource/2np7-5jsg.json"
+					},
+					{
+						"name": "Destination",
+						"value": "nytaxitrips//NYTaxiGreen2014.json"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"quoteAllText": true
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['vendorid']"
+								},
+								"sink": {
+									"path": "$['vendorid']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['lpep_pickup_datetime']"
+								},
+								"sink": {
+									"path": "$['lpep_pickup_datetime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['lpep_dropoff_datetime']"
+								},
+								"sink": {
+									"path": "$['lpep_dropoff_datetime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['store_and_fwd_flag']"
+								},
+								"sink": {
+									"path": "$['store_and_fwd_flag']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ratecodeid']"
+								},
+								"sink": {
+									"path": "$['ratecodeid']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_longitude']"
+								},
+								"sink": {
+									"path": "$['pickup_longitude']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_latitude']"
+								},
+								"sink": {
+									"path": "$['pickup_latitude']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_longitude']"
+								},
+								"sink": {
+									"path": "$['dropoff_longitude']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_latitude']"
+								},
+								"sink": {
+									"path": "$['dropoff_latitude']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['passenger_count']"
+								},
+								"sink": {
+									"path": "$['passenger_count']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['trip_distance']"
+								},
+								"sink": {
+									"path": "$['trip_distance']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['fare_amount']"
+								},
+								"sink": {
+									"path": "$['fare_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['extra']"
+								},
+								"sink": {
+									"path": "$['extra']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['mta_tax']"
+								},
+								"sink": {
+									"path": "$['mta_tax']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tip_amount']"
+								},
+								"sink": {
+									"path": "$['tip_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tolls_amount']"
+								},
+								"sink": {
+									"path": "$['tolls_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['total_amount']"
+								},
+								"sink": {
+									"path": "$['total_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['payment_type']"
+								},
+								"sink": {
+									"path": "$['payment_type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['trip_type']"
+								},
+								"sink": {
+									"path": "$['trip_type']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_qe9",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_qe9",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

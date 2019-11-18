@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_uei",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpServer_nytaxi",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/resource/5gj9-2kzx.json"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

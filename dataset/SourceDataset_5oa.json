@@ -1,0 +1,30 @@
+{
+	"name": "SourceDataset_5oa",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics_makomar",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "namee",
+				"type": "varchar"
+			},
+			{
+				"name": "groupp",
+				"type": "varchar"
+			},
+			{
+				"name": "reg",
+				"type": "int"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "student"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_9tv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpServer_nytaxi",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/resource/gi8d-wdg5.json"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

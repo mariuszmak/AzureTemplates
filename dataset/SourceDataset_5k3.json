@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_5k3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpServer_nytaxi",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/resource/t29m-gskq.json"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

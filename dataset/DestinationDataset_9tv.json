@@ -1,0 +1,23 @@
+{
+	"name": "DestinationDataset_9tv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "makomarshare",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "NYTaxiGreen2015.json",
+				"container": "nytaxitrips"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_uei",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "makomarshare",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "NYTaxiGreen2017.json",
+				"container": "nytaxitrips"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

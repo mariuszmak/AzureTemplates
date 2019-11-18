@@ -1,0 +1,89 @@
+{
+	"name": "SourceDataset_efi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpServer_makomar",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/t1/tbl1/en/dtl!downloadDbLoadingData.action?pid=2510006301&latestN=12&startDate=&endDate=&csvLocale=en&selectedMembers=[[1],[2,11,14],[1,2]]"
+			},
+			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "REF_DATE",
+				"type": "String"
+			},
+			{
+				"name": "GEO",
+				"type": "String"
+			},
+			{
+				"name": "DGUID",
+				"type": "String"
+			},
+			{
+				"name": "Supply and disposition",
+				"type": "String"
+			},
+			{
+				"name": "Units of measure",
+				"type": "String"
+			},
+			{
+				"name": "UOM",
+				"type": "String"
+			},
+			{
+				"name": "UOM_ID",
+				"type": "String"
+			},
+			{
+				"name": "SCALAR_FACTOR",
+				"type": "String"
+			},
+			{
+				"name": "SCALAR_ID",
+				"type": "String"
+			},
+			{
+				"name": "VECTOR",
+				"type": "String"
+			},
+			{
+				"name": "COORDINATE",
+				"type": "String"
+			},
+			{
+				"name": "VALUE",
+				"type": "String"
+			},
+			{
+				"name": "STATUS",
+				"type": "String"
+			},
+			{
+				"name": "SYMBOL",
+				"type": "String"
+			},
+			{
+				"name": "TERMINATED",
+				"type": "String"
+			},
+			{
+				"name": "DECIMALS",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_357",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpServer_nytaxi",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/resource/biws-g3hs.json"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

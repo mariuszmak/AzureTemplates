@@ -1,0 +1,212 @@
+{
+	"name": "CopyPipeline_nytaxi2014",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_o7j",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "/resource/gkne-dk5s.json"
+					},
+					{
+						"name": "Destination",
+						"value": "nytaxitrips//NyTaxiTrips2014.json"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"quoteAllText": true
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['vendor_id']"
+								},
+								"sink": {
+									"path": "$['vendor_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_datetime']"
+								},
+								"sink": {
+									"path": "$['pickup_datetime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_datetime']"
+								},
+								"sink": {
+									"path": "$['dropoff_datetime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['passenger_count']"
+								},
+								"sink": {
+									"path": "$['passenger_count']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['trip_distance']"
+								},
+								"sink": {
+									"path": "$['trip_distance']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_longitude']"
+								},
+								"sink": {
+									"path": "$['pickup_longitude']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pickup_latitude']"
+								},
+								"sink": {
+									"path": "$['pickup_latitude']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['store_and_fwd_flag']"
+								},
+								"sink": {
+									"path": "$['store_and_fwd_flag']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_longitude']"
+								},
+								"sink": {
+									"path": "$['dropoff_longitude']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dropoff_latitude']"
+								},
+								"sink": {
+									"path": "$['dropoff_latitude']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['payment_type']"
+								},
+								"sink": {
+									"path": "$['payment_type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['fare_amount']"
+								},
+								"sink": {
+									"path": "$['fare_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['mta_tax']"
+								},
+								"sink": {
+									"path": "$['mta_tax']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tip_amount']"
+								},
+								"sink": {
+									"path": "$['tip_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tolls_amount']"
+								},
+								"sink": {
+									"path": "$['tolls_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['total_amount']"
+								},
+								"sink": {
+									"path": "$['total_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['imp_surcharge']"
+								},
+								"sink": {
+									"path": "$['imp_surcharge']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rate_code']"
+								},
+								"sink": {
+									"path": "$['rate_code']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_o7j",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_o7j",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,208 @@
+{
+	"name": "CopyPipeline_Taxi",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_wsl",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "/resource/t29m-gskq.json"
+					},
+					{
+						"name": "Destination",
+						"value": "nytaxitrips//NYTaxiTrips2018.json"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 1
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"quoteAllText": true
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['vendorid']"
+								},
+								"sink": {
+									"path": "$['vendorid']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tpep_pickup_datetime']"
+								},
+								"sink": {
+									"path": "$['tpep_pickup_datetime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tpep_dropoff_datetime']"
+								},
+								"sink": {
+									"path": "$['tpep_dropoff_datetime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['passenger_count']"
+								},
+								"sink": {
+									"path": "$['passenger_count']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['trip_distance']"
+								},
+								"sink": {
+									"path": "$['trip_distance']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ratecodeid']"
+								},
+								"sink": {
+									"path": "$['ratecodeid']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['store_and_fwd_flag']"
+								},
+								"sink": {
+									"path": "$['store_and_fwd_flag']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['pulocationid']"
+								},
+								"sink": {
+									"path": "$['pulocationid']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dolocationid']"
+								},
+								"sink": {
+									"path": "$['dolocationid']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['payment_type']"
+								},
+								"sink": {
+									"path": "$['payment_type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['fare_amount']"
+								},
+								"sink": {
+									"path": "$['fare_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['extra']"
+								},
+								"sink": {
+									"path": "$['extra']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['mta_tax']"
+								},
+								"sink": {
+									"path": "$['mta_tax']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tip_amount']"
+								},
+								"sink": {
+									"path": "$['tip_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tolls_amount']"
+								},
+								"sink": {
+									"path": "$['tolls_amount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['improvement_surcharge']"
+								},
+								"sink": {
+									"path": "$['improvement_surcharge']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['total_amount']"
+								},
+								"sink": {
+									"path": "$['total_amount']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_wsl",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_wsl",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

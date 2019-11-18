@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_1th",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "makomarshare",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "NYTaxiTrips2019.json",
+				"container": "nytaxitrips"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

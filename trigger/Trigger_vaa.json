@@ -1,0 +1,28 @@
+{
+	"name": "Trigger_vaa",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyPipeline_makomar",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"windowStart": "@trigger().scheduledTime"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 24,
+				"startTime": "2019-11-05T18:10:00Z",
+				"endTime": "2019-11-06T18:03:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

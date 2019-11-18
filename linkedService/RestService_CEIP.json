@@ -1,0 +1,14 @@
+{
+	"name": "RestService_CEIP",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Canadian Energy Information Portal",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData.action?pid=2510006301&latestN=12&startDate=&endDate=&csvLocale=en&selectedMembers=[[1],[2,11,14],[1,2]]",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "DestinationDataset_5oa",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStore_makomar",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_nqu",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "makomarshare",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "slovenia.zip",
+				"container": "bigones"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
